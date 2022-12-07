@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #edf2f4;
+}
+
+h2 {
+  color: #2b2d42;
+}
+
+hr {
+  border-top: 11px double #2b2d42;
+  width: 33%;
+  margin: auto;
+}
+
+button {
+  border-radius: 6px;
+  height: 20px;
+  width: 100px;
+  border: none;
+  
+}
+
+.submit_button {
+  border-radius: 6px;
+  height: 20px;
+  width: 100px;
+  border: none;
+  background-color: #edf2f4;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.delete_button {
+  border-radius: 6px;
+  height: 20px;
+  width: 100px;
+  color: #edf2f4;
+  background-color: #ef233c;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+button:hover{
+  background-color: #2b2d42;
+  color: white;
+}
+
+.submit_button:hover{
+  background-color: #2b2d42;
+  color: white;
+}
+
+.delete_button:hover{
+  background-color: #2b2d42;
+  color: white;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+  color: #edf2f4;
+}
+
+.form-text {
+  color: #2b2d42;
+}
+
+.store_holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  width: 100%;
+}
+
+.header-holder {
+  height: auto;
+  background-color: #2b2d42;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  font-size: larger;
+  align-items: center;
+  height: 200px;
+}
+
+
+.add_a_store {
+  display: flex;
+  justify-content: center;
+}
+
+.current-animal-stores {
+  font-size: 40px;
+}
+
+.store {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+}
+
+.name_city {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background-color: #8d99ae;
+  width: 70%;
+}
+
+.store_animals {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.store_animal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 200px;
+  margin-bottom: 30px;
+}
+
+.add_a_store {
+  padding-top: 30px;
+}
+
+.current_stores {
+  padding-top: 30px;
+  width: 100%;
+}
+
+.store_stats {
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.footer-holder {
+  background-color: #2b2d42;
+  height: auto;
+  margin-top: 40px;
+}
+
+.footer {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animal_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 150px;
+  
+}
+
+.adopted_button {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Mobile Styles */
+@media only screen and (max-width: 415px) {
+   
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 416px) and (max-width: 960px) {
+    
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+  .store_animals {
+  display: flex;
+  justify-content: center;
+
+}
+
+hr {
+  display: none;
+  
+}
+
+.store_holder {
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.store_holder_holder {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.name_city {
+  width: 65%;
+  justify-content: start;
+  border: solid 1px pink;
+}
+
+.store {
+  display: flex;
+}
+}
+
+
