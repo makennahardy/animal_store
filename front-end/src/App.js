@@ -20,7 +20,7 @@ function App() {
 
   const fetchStores = async() => {
     try {
-      const response = await axios.get("/api/store");
+      const response = await axios.get("/app/store");
       setStores(response.data);
     } catch(error) {
       setError("error retrieving stores: " + error);
@@ -30,7 +30,7 @@ function App() {
   /*
   const fetchAnimals = async(animal) => {
     try {      
-      const response = await axios.get("/api/animal" + animal.id);
+      const response = await axios.get("/app/animal" + animal.id);
       setStoreAnimals(response.data);
     } catch(error) {
       setError("error retrieving animals: " + error);
@@ -40,7 +40,7 @@ function App() {
   
   const createStore = async() => {
     try {
-      await axios.post("/api/store", {store_name: store_name, city: city, store_animals: store_animals});
+      await axios.post("/app/store", {store_name: store_name, city: city, store_animals: store_animals});
     } catch(error) {
       setError("error adding a store: " + error);
     }
@@ -48,7 +48,7 @@ function App() {
   
   const deleteOneStore = async(store) => {
     try {
-      await axios.delete("/api/store/" + store.id);
+      await axios.delete("/app/store/" + store.id);
     } catch(error) {
       setError("error deleting a store" + error);
     }
@@ -56,7 +56,7 @@ function App() {
   
   const adoptOneAnimal = async(store, animal_id) => {
     try {
-      await axios.delete("/api/animal/" + store.store_name + "/" + animal_id);
+      await axios.delete("/app/animal/" + store.store_name + "/" + animal_id);
     } catch(error) {
       setError("error adopting an animal" + error);
     }
@@ -64,7 +64,7 @@ function App() {
   
   const addOneAnimal = async(store) => {
     try {
-      await axios.post("/api/animal/" + store.store_name, {animal_name: animal_name, type: type, breed: breed});
+      await axios.post("/app/animal/" + store.store_name, {animal_name: animal_name, type: type, breed: breed});
     } catch(error) {
       setError("error adding a store: " + error);
     }
@@ -142,7 +142,7 @@ function App() {
         
         <div className="footer-holder">
             <div className="footer">
-              <a href=''>GitHub</a>
+              <a href='https://github.com/makennahardy/animal_store'>GitHub</a>
             </div>
       </div>
     </div>   

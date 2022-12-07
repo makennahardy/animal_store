@@ -48,7 +48,7 @@ const Store = mongoose.model('Store', storeSchema);
 //middleware
 
 //FOR STORE//
-app.get("/api/store", async (req,res) => {
+app.get("/app/store", async (req,res) => {
     try {
         let stores = await Store.find();
         res.send(stores);
@@ -58,7 +58,7 @@ app.get("/api/store", async (req,res) => {
     }
 })
 
-app.post('/api/store', async (req, res) => {
+app.post('/app/store', async (req, res) => {
     const store = new Store({
     store_name: req.body.store_name,
     city: req.body.city,
@@ -73,7 +73,7 @@ app.post('/api/store', async (req, res) => {
   }
 });
 
-app.delete('/api/store/:id', async (req, res) => {
+app.delete('/app/store/:id', async (req, res) => {
   try {
     await Store.deleteOne({
       _id: req.params.id
@@ -115,7 +115,7 @@ app.post('/api/animal', async (req, res) => {
 }); */
 
 
-app.post('/api/animal/:store_name', async (req, res) => {
+app.post('/app/animal/:store_name', async (req, res) => {
   try {
     const {store_name} = req.params
     const store = await Store.findOne({store_name})
@@ -129,7 +129,7 @@ app.post('/api/animal/:store_name', async (req, res) => {
 });
 
 
-app.delete('/api/animal/:store_name/:id', async (req, res) => {
+app.delete('/app/animal/:store_name/:id', async (req, res) => {
   try {
     const { store_name, id } = req.params;
     const store = await Store.findOne({store_name})
@@ -154,31 +154,67 @@ db.once('open', () => {
   console.log("Connection successful");
   
   const og_store_list = [
-    {store_name: "PetCo", city: "Charleston", 
-    store_animals:  [{animal_name: "Cleo",
-                    type: "Cat",
-                    breed: "Siamese"},
-                    {animal_name: "Claire",
-                    type: "Cat",
-                    breed: "White"},
-                    {animal_name: "Crispy",
-                    type: "Cat",
-                    breed: "Grand Burmese"}]
+    {store_name: "PetCo", city: "Provo", 
+    store_animals:  [ {
+                        animal_name: "Cleo",
+                        type: "Cat",
+                        breed: "Siamese"
+                      },
+                      {
+                        animal_name: "Claire",
+                        type: "Cat",
+                        breed: "Persian"
+                      },
+                      {
+                        animal_name: "Crispy",
+                        type: "Cat",
+                        breed: "Burmese"
+                      },
+                      {
+                        animal_name: "Geico",
+                        type: "Lizard",
+                        breed: "Gecko"
+                      } ]
     },
     //{store_name: "PetsRUs", city: "Provo"},
-    {store_name: "We Only Love Dogs", city: "Denver",
-      store_animals: [{animal_name: "Jerry",
+    {store_name: "We Only Love Birds", city: "Salt Lake City",
+    store_animals:  [ {
+                        animal_name: "Jerry",
                         type: "Bird",
-                        breed: "Parakeet"},
-                        {animal_name: "Paul",
-                          type: "Bird",
-                          breed: "Parrot"
-                        }]
+                        breed: "Parakeet"
+                      },
+                      {
+                        animal_name: "Paul",
+                        type: "Bird",
+                        breed: "Parrot"
+                      }, 
+                      {
+                        animal_name: "Rodizio",
+                        type: "Bird",
+                        breed: "Toucan"
+                      }, 
+                      {
+                        animal_name: "Stuffing",
+                        type: "Bird",
+                        breed: "Turkey"
+                      } ]
     },
-    {store_name: "PETS", city: "Detroit",
-      store_animals:  [{animal_name: "Bob",
-                        type: "Dog",
-                        breed: "Fluffy"}]
+    {store_name: "PETS R US", city: "Ogden",
+    store_animals:  [ {
+                          animal_name: "Bob",
+                          type: "Dog",
+                          breed: "Fluffy"
+                        },
+                        {
+                          animal_name: "Chocolate",
+                          type: "Dog",
+                          breed: "Labrador"
+                        }, 
+                        {
+                          animal_name: "Fido",
+                          type: "Lizard",
+                          breed: "Chameleon"
+                        } ]
     }
     ];
     
