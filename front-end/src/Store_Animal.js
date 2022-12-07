@@ -1,3 +1,4 @@
+
 import './App.css';
 
 function StoreAnimal(props) {
@@ -34,7 +35,3 @@ function StoreAnimal(props) {
 }
 
 export default StoreAnimal;
-
-
-
-
