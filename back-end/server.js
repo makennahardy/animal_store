@@ -24,6 +24,11 @@ animalSchema.set('toJSON', {
   virtuals: true
 });
 
+//ADOPTED ANIMAL//
+const adoptedAnimalSchema = new mongoose.Schema({
+  adopted_animals: [animalSchema]
+});
+
 //STORE//
 const storeSchema= new mongoose.Schema({
   store_name: String,
@@ -45,7 +50,7 @@ storeSchema.set('toJSON', {
 const Store = mongoose.model('Store', storeSchema);
 //const Animal = mongoose.model('Animal', animalSchema);
 
-//middleware
+const AdoptedAnimal = mongoose.model('AdoptedAnimal', adoptedAnimalSchema);
 
 //FOR STORE//
 app.get("/app/store", async (req,res) => {
@@ -88,7 +93,7 @@ app.delete('/app/store/:id', async (req, res) => {
 
 //FOR ANIMAL//
 /*
-app.get("/api/animal", async (req,res) => {
+app.get("/app/animal", async (req,res) => {
     try {
         let animals = await Animal.find();
         res.send(animals);
@@ -99,7 +104,7 @@ app.get("/api/animal", async (req,res) => {
 })*/
 
 /*
-app.post('/api/animal', async (req, res) => {
+app.post('/app/animal', async (req, res) => {
     const animal = new Animal({
     animal_name: req.body.animal_name,
     type: req.body.type,
@@ -129,11 +134,11 @@ app.post('/app/animal/:store_name', async (req, res) => {
 });
 
 
-app.delete('/app/animal/:store_name/:id', async (req, res) => {
+app.delete('/app/animal/:store_name/:index', async (req, res) => {
   try {
-    const { store_name, id } = req.params;
+    const { store_name, index } = req.params;
     const store = await Store.findOne({store_name})
-    store.store_animals.splice(id, 1)
+    store.store_animals.splice(index, 1)
     store.save()
     res.sendStatus(200);
   } catch (error) {
@@ -141,6 +146,46 @@ app.delete('/app/animal/:store_name/:id', async (req, res) => {
     res.sendStatus(500);
   }
 });
+
+//For Adopted Animal
+
+
+app.get("/app/adopted", async (req,res) => {
+  try {
+    let adopted_animals = await AdoptedAnimal.find();
+    res.send(adopted_animals);
+  } catch (error) {
+        console.log(error);
+        res.sendStatus(500);
+    }
+})
+
+app.post('/app/adopted', async (req, res) => {
+    const adopted_animal = new AdoptedAnimal({
+    adopted_animals: req.body
+  });
+  try {
+    await adopted_animal.save();
+    res.send({adopted_animal:adopted_animal});
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+});
+
+app.delete('/app/adopted/:_id', async (req, res) => {
+  try {
+    await AdoptedAnimal.deleteOne({
+      _id: req.params._id
+    });
+    res.sendStatus(200);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+});
+
+
 
 // connect to the database
 mongoose.connect('mongodb://localhost:27017/animal_stores', {

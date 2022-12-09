@@ -5,6 +5,7 @@
     text-align: center;
 }
 
+
 a {
   text-decoration: none;
   color: #edf2f4;
@@ -46,6 +47,12 @@ button {
   background-color: #ef233c;
   margin-top: 20px;
   margin-bottom: 15px;
+  
+
+  margin-left: auto;
+  margin-right: auto;
+
+  
 }
 
 button:hover{
@@ -137,6 +144,15 @@ button:hover{
   
 }
 
+
+
+
+.adoptee {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .store_animal {
   display: flex;
   flex-direction: column;
@@ -158,6 +174,18 @@ button:hover{
   margin-top: 15px;
   margin-bottom: 30px;
 }
+
+.adopted-animals-holder {
+  height: auto;
+}
+
+
+/*
+.adoptee {
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}*/
 
 .footer-holder {
   background-color: #2b2d42;
@@ -188,15 +216,74 @@ button:hover{
   margin-right: auto;
 }
 
+.adopted-animals {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.adoptee-holder {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.adoptee {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: #8d99ae;
+}
+
+
+.adopted-header {
+  color: #2b2d42;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
+
 
 /* Mobile Styles */
-@media only screen and (max-width: 415px) {
+@media only screen and (max-width: 500px) {
    
 }
 
 /* Tablet Styles */
-@media only screen and (min-width: 416px) and (max-width: 960px) {
-    
+@media only screen and (min-width: 501px) and (max-width: 960px) {
+ .adopted-animals {
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.adopted-animals {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.adoptee-holder {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 50%;
+}
+
+.adoptee {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+
+
+ 
 }
 
 /* Desktop Styles */
@@ -227,10 +314,40 @@ hr {
 .name_city {
   width: 65%;
   justify-content: start;
-  border: solid 1px pink;
+  
 }
 
 .store {
   display: flex;
 }
+
+.adopted-animals {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.adoptee-holder {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  width: 33.3%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.adoptee {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+
+
+
+
+
+
+
 }

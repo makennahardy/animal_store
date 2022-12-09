@@ -14,8 +14,6 @@ function Store(props) {
     const breed = props.breed;
     const setBreed = props.setBreed;
     
-    console.log("stores: ");
-    console.log(stores);
     
     return (
         <div className="store_holder">
@@ -23,6 +21,8 @@ function Store(props) {
             {stores.map( store => ( 
             <div key={store.id} className="store">
                 <div className="name_city">
+                
+                    
                     
                     <div className="store_stats">
                         <h2>{store.store_name}</h2>
